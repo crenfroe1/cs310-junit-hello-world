@@ -3,12 +3,15 @@ import org.junit.*;
 
 import static org.junit.Assert.*;
 
+import java.beans.Transient;
+
 public class ExampleTest {
 
     private Main main;
     private String expectedGreeting, expectedReverseGreeting;
     private String expectedReverse1, expectedReverse2, expectedReverse3;
-    
+    private String expectedReverse4;
+
     @Before
     public void setUp() {
         main = new Main();
@@ -17,6 +20,7 @@ public class ExampleTest {
         expectedReverse1 = "topaeT elttiL a m'I";
         expectedReverse2 = "elddiD elddiD yeH";
         expectedReverse3 = "kcoD yrokciD yrokciH";
+        expectedReverse4 = "annairb eolhc";
     }
         
     @Test
@@ -47,6 +51,12 @@ public class ExampleTest {
     public void testReverseMessage3() {
         String actual = main.reverse("Hickory Dickory Dock");
         assertEquals(expectedReverse3, actual);
+    }
+
+    @Test
+    public void testReverseMessage4(){
+        String actual = main.reverse("chloe brianna");
+        assertEquals(expectedReverse4, actual);
     }
     
 }
